@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Práctica_2._Ahorcado.PantallaAhorcado"
+             Title="Ahorcado"
+             Padding="10">
+
+    <VerticalStackLayout Padding="0" Spacing="20">
+
+        <!-- Imagen del ahorcado -->
+        <Image x:Name="ImagenAhorcado"
+               Source="{Binding ImagenActual}"
+               HeightRequest="200"
+               HorizontalOptions="Center"/>
+
+        <!-- Contador de errores -->
+        <Label x:Name="LabelErrores"
+               Text="{Binding Errores, StringFormat='Errores: {0} de 6'}"
+               HorizontalOptions="Center"
+               FontSize="16"
+               FontAttributes="Bold"/>
+
+        <!-- Palabra con espacios -->
+        <Label x:Name="LabelPalabra"
+               Text="{Binding PalabraVisible}"
+               HorizontalOptions="Center"
+               FontSize="32"
+               FontAttributes="Bold"
+               Margin="0,10,0,10"/>
+
+        <!-- Mensaje de estado (ganador/perdedor) -->
+        <Label x:Name="LabelEstado"
+               Text=""
+               HorizontalOptions="Center"
+               FontSize="20"
+               FontAttributes="Bold"
+               TextColor="Red"/>
+
+        <!-- Botón Reset -->
+        <Button x:Name="BotonReset"
+                Text="Reset"
+                HorizontalOptions="Center"
+                Clicked="OnResetClicked"
+                Margin="0,5,0,15"/>
+
+        <!-- Botones de letras en FlexLayout -->
+        <FlexLayout x:Name="ContenedorLetras"
+                    Wrap="Wrap"
+                    JustifyContent="Center"
+                    AlignItems="Center"
+                    Padding="12"
+                    Direction="Row" 
+                    >
+        </FlexLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>
